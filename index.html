@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>A deep dive into accessible notifications</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/intopia.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'dist/theme/pdf.css' : 'dist/theme/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <section data-background="#d3420d">
+            <h1>
+              <span class="font-xxxs">A deep dive into </span>
+              Accessible Notifications
+            </h1>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>I'd like to acknowledge the <b>Traditional Owners of the lands on which we meet today</b>, the Cammeraygal people of the Eora.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>I also pay my respects to <b>Elders past and present</b>, and extend that respect to all First Nations people who are attending this event.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section id="what-are-notifications">
+          <section data-background="#15828E">
+            <h3>What are notifications?</h3>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>They are aspects of the user interface that <b>bring something to the notice of the user</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>They are an important part of <b>almost all digital products</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>They help <b>improve the user experience</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section id="types-of-notications">
+          <section data-background="#15828E">
+            <h3>Types of notications</h3>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>The first level of notification require <b>immediate attention and user action</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <img src="assets/img-developing/notification01.png" alt="">
+          </section>
+
+          <section data-background="#EDEBEB">
+            <img src="assets/img-developing/notification02.png" alt="">
+          </section>
+
+          <section data-background="#EDEBEB">
+            <img src="assets/img-developing/notification03.png" alt="">
+          </section>
+
+          <section data-background="#EDEBEB">
+            <img src="assets/img-developing/notification04.png" alt="">
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>The second level of notfications require attention from the user <b>at specific times after some event</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <img src="assets/img-developing/notification05.png" alt="">
+          </section>
+
+          <section data-background="#EDEBEB">
+            <img src="assets/img-developing/notification06.png" alt="">
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>The third level of notifications are designed to inform users of an event, <b>but do not require urgent attention</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <img src="assets/img-developing/notification07.png" alt="">
+          </section>
+
+          <section data-background="#EDEBEB">
+            <img src="assets/img-developing/notification08.png" alt="">
+          </section>
+
+          <section data-background="#EDEBEB">
+            <img src="assets/img-developing/notification09.png" alt="">
+          </section>
+
+          <section data-background="#EDEBEB">
+            <img src="assets/img-developing/notification10.png" alt="">
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>The fourth level of notifications are <b>directly related to user interaction</b> on an element.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <img src="assets/img-developing/notification12.png" alt="">
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>And there are notifications that are <b>just available or discoverable</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <img src="assets/img-developing/notification11.png" alt="">
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>These are <b>just a summary</b> of some common types of notification.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>You may have <b>different names</b> for them.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>You may also <b>categorise them slightly differently</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <ul>
+              <li>Lots of <b>different types</b>.</li>
+              <li>They have <b>different user needs</b>.</li>
+              <li>Some are <b>more important</b> than others.</li>
+            </ul>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section id="things-to-consider">
+          <section data-background="#15828E">
+            <h3>Things to consider</h3>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>Let's look at some things to consider when <b>designing and building notifications</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <ul class="icon-list">
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>What type of information is being communicated?</li>
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>What is the urgency of the information?</li>
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>Are user actions needed?</li>
+            </ul>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <ul class="icon-list">
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>What actions will trigger it?</li>
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>Where will it appear?</li>
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>How will it appear?</li>
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>Is it time-based or dismissable?</li>
+            </ul>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <h4>Accessibility considerations for designers</h4>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <ul class="icon-list">
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>Does it use colour alone for meaning?</li>
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>Does it have sufficient colour contrast?</li>
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>Does it contain animation/flashing that can these be turned off by users?</li>
+            </ul>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <h4>Accessibility considerations for developers</h4>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <ul class="icon-list">
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>Does it have an accessible name?</li>
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>Does it need a role or live regions?</li>
+            </ul>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <ul class="icon-list">
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>Does it need to be announced to assistive technologies?</li>
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>If so, what is the appropriate time?</li>
+            </ul>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <ul class="icon-list">
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>Does it need to be dismissable?</li>
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>Does it need to recieve focus?</li>
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>If so, where does focus go after it is dismissed?</li>
+            </ul>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <ul class="icon-list">
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>Are keystrokes needed within it?</li>
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>Can all actions be undertaken using keyboard only?</li>
+              <li><span aria-hidden="true" class="icon icon-circle-question-regular"></span>Does it need to trap some keystrokes?</li>
+            </ul>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>In reality, some of the focus management considerations <b>should be made by designers</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>However, they are <b>often overlooked</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>Or it becomes the <b>developer's job</b> to make these important decisions.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>Ideally, teams should <b>collaborate to make key decisions</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section id="toast-notifications">
+          <section data-background="#15828E">
+            <h3>Toast notifications</h3>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <img src="assets/img-developing/notification10.png" alt="">
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>These are often used to inform users of some sort of <b>successful action</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>They often appear in <b>the bottom of the viewport</b>, animating up into view.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>They're often time-based, so will only <b>appear on screen for a short time period</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>They normally <b>do not require user action</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>If user-intaction is needed, it should probably be a <b>Push or Growl notification</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <h4>What about Toast notification accessibility?</h4>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>All users need to be <b>informed</b> that their actions have been successful.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>So, this information needs to be <b>announced to screen reader users</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>The announcement should be <b>polite rather than assertive</b> - just like for sighted users.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div <span class="codeHighlight">role="status"</span>&gt;
+  ...
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div <span class="codeHighlight">aria-live="polite"</span>&gt;
+  ...
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>There should be <b>no need to send focus</b> to the notification.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>This makes focus managing <b>easy</b> for this type of notification.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>The notification should appear in <b>close proximity to the user's action</b>, for ZoomText users.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section id="push-notifications">
+          <section data-background="#15828E">
+            <h3>Push notifications</h3>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <img src="assets/img-developing/notification01.png" alt="">
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>They are often used to inform users of <b>something important</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>For this reason, they often <b>need attention and user action</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>They could appear <b>anywhere within the viewport</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>There is always <b>at least one user action</b> associated with the notification.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>They should <b>not be time-based</b>. </p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>So, users <b>must engage with the notification</b>, even just to dismiss it.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <h4>What about Push notification accessibility?</h4>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>Due to it's importance, it will <b>need to receive user focus</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>Focus needs to go the the <b>notification container, the heading or the first action inside</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div <span class="codeHighlight">tabindex="-1"</span>&gt;
+  ...
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div&gt;
+  &lt;h3 <span class="codeHighlight">tabindex="-1"</span>&gt;Notification heading&lt;/h3&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div&gt;
+  &lt;h3&gt;Notification heading&lt;/h3&gt;
+  <span class="codeHighlight">&lt;button&gt;&lt;/button&gt;</span>
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>As it receives focus, it will <b>need an accessible name</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div <span class="codeHighlight">aria-label="Something"</span>&gt;
+  ...
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div <span class="codeHighlight">aria-labelledby="aaa"</span>&gt;
+  &lt;h3 <span class="codeHighlight">id="aaa"</span>&gt;Notification heading&lt;/h3&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div&gt;
+  &lt;h3&gt;Notification heading&lt;/h3&gt;
+  &lt;button <span class="codeHighlight">aria-label="Dismiss"</span>&gt;X&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>Also due to it's importance, it <b>needs to be announced immediately</b>.</p>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div <span class="codeHighlight">role="alert"</span>&gt;
+  ...
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div <span class="codeHighlight">aria-live="assertive"</span>&gt;
+  ...
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>The notification needs to be <b>keyboard-only accessible</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>If dismissed by the user, you need to decide the <b>most intuitive place to send focus</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section id="modals">
+          <section data-background="#15828E">
+            <h3>Modals</h3>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <img src="assets/img-developing/notification03.png" alt="">
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>They demand some sort of <b>user action</b> - that is their entire purpose.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>They generally appear <b>over the top of the overall UI</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>There is always <b>at least one user action</b> associated with the notification.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>As with push notifications, users <b>must engage with the notification</b>, even just to dismiss it.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <h4>What about modal accessibility?</h4>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>Almost all of the <b>same things apply</b> here as with push notifications.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>There are some key decisions around <b>where focus should be sent</b> with the modal is triggered.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>Should focus go to the modal container, the heading or <b>the first focusable item</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>But the biggest difference is <b>keyboard activity within the modal</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>As mentioned before, modals are designed to <b>demand some sort of user-action</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>This means we want them to remain focussed on the modal <b>until at least one user action has taken place</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>While the modal is open, keyboard users should never be allowed to <b>interact with the page below</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>This means that <kbd>TAB</kbd> and <kbd>SHIFT + TAB</kbd> should be "trapped" within the modal.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>Unless we want to <b>allow them access to the browser Chrome</b> - address bar etc.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>And like push notifications, you need to decide the <b>most intuitive place to send focus</b>.</p>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section id="wrap-up">
+          <section data-background="#15828E">
+            <h3>Wrap up</h3>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>Notifications should considered carefully - <b>especially from accessibility perspective</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>Teams need to consider exactly how users <b>can and should engage with notifications</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>And how and when these notifications are <b>presented to different users</b>.</p>
+          </section>
+
+          <section data-background="#EDEBEB">
+            <p>Thank you!</p>
+          </section>
+        </section>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js"></script>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'none',
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealNotes ]
+      });
+    </script>
+
+  </body>
+</html>

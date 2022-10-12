@@ -1,2 +1,3 @@
-# a-deep-dive-into-accessible-notifications
-A deep dive into accessible notifications -  A11y Camp 2022
+# A deep dive into accessible notifications
+
+Preesentation to A11y Camp 2022
